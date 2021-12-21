@@ -1,3 +1,36 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "next/core-web-vitals",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "no-shadow": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/function-component-definition": "off",
+    "react/jsx-props-no-spreading": "off"
+  }
 }
