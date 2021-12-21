@@ -7,8 +7,8 @@ module.exports = {
   ) {
     console.log({defaultPathMap, dev, dir, outDir, distDir, buildId});
     return {
-      '/dongheng': { page: '/', query: { contentType: 'DONGHENG' } },
-      '/interior': { page: '/', query: { contentType: 'INTERIOR' } },
+      '/dongheng': { page: '/', query: { contentType: 'dongheng' } },
+      '/interior': { page: '/', query: { contentType: 'interior' } },
     }
   },
 }

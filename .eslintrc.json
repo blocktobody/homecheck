@@ -31,6 +31,8 @@
     "no-shadow": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/function-component-definition": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "import/extensions": "off",
+    "import/prefer-default-export": "off"
   }
 }
