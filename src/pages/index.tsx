@@ -4,7 +4,7 @@ import useSWR from 'swr';
 
 import { MainContext } from './context';
 
-const fetcher = async (url: never) => {
+async function fetcher(url: never) {
   const res = await fetch(url);
   const data = await res.json();
 
@@ -12,7 +12,7 @@ const fetcher = async (url: never) => {
     throw new Error(data.message);
   }
   return data;
-};
+}
 
 // export async function getStaticProps() {
 //   return {

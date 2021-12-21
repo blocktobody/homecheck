@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import { ContentType, CONTENT_TYPE } from '../types';
+import GlobalStyle from '../styles/GlobalStyle';
 
 const defaultMetaInfos = {
   description:
@@ -46,6 +47,7 @@ function MyApp({ Component, pageProps }: AppProps<Props>) {
         <meta property="og:image" content={ogImageUrl} />
         <meta property="og:url" content={linkUrl} />
       </Head>
+      <GlobalStyle />
       <Component {...pageProps} />
     </>
   );
