@@ -8,7 +8,7 @@ export default async function handler(
 ) {
   const { contentType = CONTENT_TYPE.DONGHENG } = query;
 
-  const data = await import(`../data/${contentType}.json`);
+  const data = await import(`../../data/${contentType}.json`);
 
   res.status(200).json(data);
 }

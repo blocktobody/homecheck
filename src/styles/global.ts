@@ -1,12 +1,15 @@
 import { css } from '@emotion/react';
 
+export const BREAK_POINT = 768;
+
 export const global = css`
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 
   :root {
-    --primary-color: #469c79;
-    --secondary-color: #9c2d2a;
-    --text-color: #171616;
+    --primary: #469c79;
+    --secondary: #9c2d2a;
+    --black: #171616;
+    --white: #ffffff;
   }
 
   html {
@@ -16,6 +19,7 @@ export const global = css`
 
   body {
     margin: 0;
+    overflow-x: hidden;
   }
 
   *,

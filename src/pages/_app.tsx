@@ -15,11 +15,11 @@ const defaultMetaInfos = {
 const metaInfos: Record<ContentType, { title: string; linkUrl: string }> = {
   dongheng: {
     title: '홈체크 무료 체험 이벤트 - 동행 서비스',
-    linkUrl: 'http://www.homecheck.kr',
+    linkUrl: 'http://www.homecheck.kr', // TODO: OG URL 반영
   },
   interior: {
     title: '홈체크 무료 체험 이벤트 - 인테리어 점검 서비스',
-    linkUrl: 'http://www.homecheck.kr',
+    linkUrl: 'http://www.homecheck.kr', // TODO: OG URL 반영
   },
 };
 

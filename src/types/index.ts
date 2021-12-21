@@ -5,6 +5,37 @@ export enum CONTENT_TYPE {
 
 export type ContentType = typeof CONTENT_TYPE[keyof typeof CONTENT_TYPE];
 
+export interface CaseCardData {
+  subtitle: string;
+  title: string;
+  receipt: {
+    title: string;
+    items: string[];
+    totalPrice: string;
+  };
+}
+
+export interface TotalEstimateCardData {
+  subtitle: string;
+  title: string;
+  points: string[];
+  receipt: {
+    title: string;
+    items: {
+      text: string;
+      price: string;
+    }[];
+    totalPrice: string;
+  };
+}
+
+export interface BenefitCardData {
+  subtitle: string;
+  title: string;
+  text: string;
+  imagePath: string;
+}
+
 export interface Data {
   main: {
     subtitle: string;
@@ -17,37 +48,13 @@ export interface Data {
   estimate: {
     subtitle: string;
     title: string;
-    cases: {
-      subtitle: string;
-      title: string;
-      receipt: {
-        title: string;
-        items: string[];
-        totalPrice: string;
-      };
-    }[];
-    totalEstimate: {
-      subtitle: string;
-      title: string;
-      points: string[];
-      receipt: {
-        title: string;
-        items: {
-          text: string;
-          price: string;
-        }[];
-        totalPrice: string;
-      };
-    };
+    cases: CaseCardData[];
+    totalEstimate: TotalEstimateCardData;
   };
   benefit: {
     subtitle: string;
     title: string;
-    cards: {
-      subtitle: string;
-      title: string;
-      text: string;
-    }[];
+    cards: BenefitCardData[];
   };
   caution: {
     title: string;
