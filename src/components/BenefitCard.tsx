@@ -69,7 +69,13 @@ function BenefitCard({ card }: Props) {
         {text}
       </Text>
       <ImageContainer>
-        <Image src={imagePath} width={335} height={163} alt={subtitle} />
+        <Image
+          src={imagePath}
+          width={335}
+          height={163}
+          alt={subtitle}
+          loading="lazy"
+        />
       </ImageContainer>
     </Container>
   );

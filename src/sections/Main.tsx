@@ -5,6 +5,7 @@ import Image from '../components/Image';
 
 import { useMainContext } from '../context';
 import { BREAK_POINT } from '../styles/global';
+import Motion from '../components/Motion';
 
 const Section = styled.section`
   position: relative;
@@ -30,12 +31,11 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: flex-start;
-  margin-top: 240px;
+  margin-top: auto;
 
   @media (max-width: ${BREAK_POINT}px) {
     flex-direction: column;
     align-items: center;
-    margin-top: 80px;
   }
 `;
 
@@ -53,17 +53,17 @@ const Title = styled.div`
   }
 `;
 
-const Points = styled.ul``;
+const Points = styled.div`
+  & > * {
+    display: flex;
+    align-items: center;
 
-const Point = styled.li`
-  display: flex;
-  align-items: center;
+    :not(:last-of-type) {
+      margin-bottom: 20px;
 
-  :not(:last-of-type) {
-    margin-bottom: 20px;
-
-    @media (max-width: ${BREAK_POINT}px) {
-      margin-bottom: 12px;
+      @media (max-width: ${BREAK_POINT}px) {
+        margin-bottom: 12px;
+      }
     }
   }
 `;
@@ -144,37 +144,47 @@ function Main() {
 
   return (
     <Section id="main">
-      <Logo
-        href="http://www.homecheck.kr"
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        <Image
-          src="/logo.png"
-          width={isMobile ? 140 : 180}
-          height={isMobile ? 32 : 40}
-          alt={title}
-        />
-      </Logo>
+      <Motion duration={0.2}>
+        <Logo
+          href="http://www.homecheck.kr"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Image
+            src="/logo.png"
+            width={isMobile ? 140 : 180}
+            height={isMobile ? 32 : 40}
+            alt={title}
+          />
+        </Logo>
+      </Motion>
       <Container>
         <Title>
-          <Text as="h2" size={isMobile ? 18 : 30}>
-            {subtitle}
-          </Text>
-          <Text as="h1" size={isMobile ? 46 : 60}>
-            {title}
-          </Text>
+          <Motion duration={0.2}>
+            <Text as="h2" size={isMobile ? 18 : 30}>
+              {subtitle}
+            </Text>
+          </Motion>
+          <Motion duration={0.3}>
+            <Text as="h1" size={isMobile ? 42 : 60}>
+              {title}
+            </Text>
+          </Motion>
         </Title>
         <Points>
-          {points.map(({ label, text }) => (
-            <Point key={text}>
+          {points.map(({ label, text }, index) => (
+            <Motion
+              key={text}
+              duration={index / 1.5 + 0.5}
+              hasTransitionY={false}
+            >
               <Label>
                 <Text color="black" size={isMobile ? 16 : 20}>
                   {label}
                 </Text>
               </Label>
               <Text size={isMobile ? 18 : 24}>{text}</Text>
-            </Point>
+            </Motion>
           ))}
         </Points>
       </Container>

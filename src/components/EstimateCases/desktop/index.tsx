@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import CaseCard from '../CaseCard';
 import TotalEstimate from '../TotalEstimate';
 
+import Motion from '../../Motion';
+
 import { useMainContext } from '../../../context';
 
 const Container = styled.div`
@@ -37,8 +39,10 @@ function EstimateCasesDesktop() {
   return (
     <Container>
       <CaseContainer>
-        {cases.map((card) => (
-          <CaseCard key={card.title} card={card} />
+        {cases.map((card, index) => (
+          <Motion key={card.title} duration={index / 2 + 0.3}>
+            <CaseCard card={card} />
+          </Motion>
         ))}
       </CaseContainer>
       <TotalEstimate totalEstimate={totalEstimate} />

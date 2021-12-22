@@ -21,7 +21,8 @@ const Container = styled.div`
     width: auto;
   }
 
-  > :last-child {
+  > *:last-of-type {
+    width: fit-content;
     margin: 0 auto;
   }
 `;

@@ -4,6 +4,7 @@ import { Container, Line, ReceiptTitle, Title, TotalPrice } from './shared';
 
 import Text from '../Text';
 import Image from '../Image';
+import Motion from '../Motion';
 
 import { TotalEstimateCardData } from '../../types';
 
@@ -66,47 +67,55 @@ function TotalEstimate({ totalEstimate }: Props) {
   } = totalEstimate;
 
   return (
-    <Container>
-      <Title align="center">
-        <Text color="secondary">{subtitle}</Text>
-        <Text as="h4" color="black" size={24}>
-          {title}
-        </Text>
-      </Title>
-      <Points>
-        {points.map((point) => (
-          <Text key={point} color="black" weight={600}>
-            {point}
+    <Motion duration={1}>
+      <Container>
+        <Title align="center">
+          <Text color="secondary">{subtitle}</Text>
+          <Text as="h4" color="black" size={24}>
+            {title}
           </Text>
-        ))}
-      </Points>
-      <Receipt imagePath="/total-receipt-container.png">
-        <ReceiptTitle>
-          <Text color="black" weight={600}>
-            {receiptTitle}
-          </Text>
-          <Line />
-        </ReceiptTitle>
-        <Items>
-          {items.map(({ text, price }) => (
-            <Item key={text}>
-              <Text weight={400}>{text}</Text>
-              <Text weight={400}>{price}</Text>
-            </Item>
+        </Title>
+        <Points>
+          {points.map((point) => (
+            <Text key={point} color="black" weight={600}>
+              {point}
+            </Text>
           ))}
-        </Items>
-        <Line />
-        <TotalPrice>
-          <Text color="black" weight={600}>
-            총
-          </Text>
-          <Text color="secondary" size={24}>
-            {totalPrice}
-          </Text>
-        </TotalPrice>
-        <Image src="/barcode.png" width={153} height={28} alt="barcode" />
-      </Receipt>
-    </Container>
+        </Points>
+        <Receipt imagePath="/total-receipt-container.png">
+          <ReceiptTitle>
+            <Text color="black" weight={600}>
+              {receiptTitle}
+            </Text>
+            <Line />
+          </ReceiptTitle>
+          <Items>
+            {items.map(({ text, price }) => (
+              <Item key={text}>
+                <Text weight={400}>{text}</Text>
+                <Text weight={400}>{price}</Text>
+              </Item>
+            ))}
+          </Items>
+          <Line />
+          <TotalPrice>
+            <Text color="black" weight={600}>
+              총
+            </Text>
+            <Text color="secondary" size={24}>
+              {totalPrice}
+            </Text>
+          </TotalPrice>
+          <Image
+            src="/barcode.png"
+            width={153}
+            height={28}
+            alt="barcode"
+            loading="lazy"
+          />
+        </Receipt>
+      </Container>
+    </Motion>
   );
 }
 

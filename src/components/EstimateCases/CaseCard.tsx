@@ -94,7 +94,7 @@ function CaseCard({ card }: Props) {
       </Title>
       <Content>
         <ImageContainer show={showPhoto}>
-          <Image src={imagePath} alt={receiptTitle} />
+          <Image src={imagePath} alt={receiptTitle} loading="lazy" />
         </ImageContainer>
         <Receipt imagePath="/receipt-container.png" show={!showPhoto}>
           <ReceiptTitle>

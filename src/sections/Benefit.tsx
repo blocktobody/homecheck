@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 import SectionTitle from '../components/SectionTitle';
 import BenefitCard from '../components/BenefitCard';
+import Motion from '../components/Motion';
 
 import { useMainContext } from '../context';
 import { BREAK_POINT } from '../styles/global';
@@ -38,8 +39,10 @@ function Benefit() {
     <Section id="benefit">
       <SectionTitle subtitle={subtitle} title={title} isMobile={isMobile} />
       <CardContainer>
-        {cards.map((card) => (
-          <BenefitCard key={card.title} card={card} />
+        {cards.map((card, index) => (
+          <Motion key={card.title} duration={index / 2 + 0.3}>
+            <BenefitCard card={card} />
+          </Motion>
         ))}
       </CardContainer>
     </Section>
