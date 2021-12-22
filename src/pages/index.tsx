@@ -23,13 +23,13 @@ async function fetcher(url: never) {
 }
 
 // 운영 빌드용 (yarn export-dongheng, yarn export-interior)
-export async function getStaticProps() {
-  const contentType = process.env.CONTENT_TYPE;
+// export async function getStaticProps() {
+//   const contentType = process.env.CONTENT_TYPE;
 
-  return {
-    props: { contentType },
-  };
-}
+//   return {
+//     props: { contentType },
+//   };
+// }
 
 interface Props {
   contentType: string;
@@ -60,8 +60,8 @@ const Home: NextPage<Props> = function Home({ contentType }: Props) {
 };
 
 // 개발 환경용 (yarn dev)
-// Home.getInitialProps = async ({ query }) => {
-//   return { contentType: query.contentType as string };
-// };
+Home.getInitialProps = async ({ query }) => {
+  return { contentType: query.contentType as string };
+};
 
 export default Home;
