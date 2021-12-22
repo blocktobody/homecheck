@@ -19,7 +19,7 @@ const Container = styled.div`
   white-space: pre-wrap;
   overflow: hidden;
 
-  > :nth-child(1) {
+  > p:nth-of-type(1) {
     width: fit-content;
     background-color: var(--primary);
     padding: 6px 20px;

@@ -44,11 +44,11 @@ const Item = styled.li`
   align-items: center;
   justify-content: space-between;
 
-  > :first-child {
+  > *:first-of-type {
     color: #adadad;
   }
 
-  > :last-child {
+  > *:last-of-type {
     color: var(--secondary);
   }
 `;

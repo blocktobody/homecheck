@@ -28,7 +28,8 @@
           "title": "홈체크 예상 견적",
           "items": ["바닥 석공사", "인력비", "자재비"],
           "totalPrice": "1,600,000원"
-        }
+        },
+        "imagePath": "/case-dongheng-1.jpg"
       },
       {
         "subtitle": "예상 견적 02",
@@ -37,7 +38,8 @@
           "title": "홈체크 예상 견적",
           "items": ["단열 공사", "도배 공사", "인력비"],
           "totalPrice": "1,890,000원"
-        }
+        },
+        "imagePath": "/case-dongheng-2.jpg"
       },
       {
         "subtitle": "예상 견적 03",
@@ -46,7 +48,8 @@
           "title": "홈체크 예상 견적",
           "items": ["방수 공사", "도배 공사", "단열 공사"],
           "totalPrice": "1,700,000원"
-        }
+        },
+        "imagePath": "/case-dongheng-3.jpg"
       },
       {
         "subtitle": "예상 견적 04",
@@ -55,7 +58,8 @@
           "title": "홈체크 예상 견적",
           "items": ["자재 및 철거 비용", "로이 유리", "인건비"],
           "totalPrice": "12,900,000원"
-        }
+        },
+        "imagePath": "/case-dongheng-4.jpg"
       }
     ],
     "totalEstimate": {

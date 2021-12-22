@@ -13,6 +13,7 @@ export interface CaseCardData {
     items: string[];
     totalPrice: string;
   };
+  imagePath: string;
 }
 
 export interface TotalEstimateCardData {

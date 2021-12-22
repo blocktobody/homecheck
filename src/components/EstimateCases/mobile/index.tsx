@@ -38,7 +38,7 @@ function EstimateCasesMobile() {
     centeredSlides: true,
     slidesPerView: 'auto',
     spaceBetween: 16,
-    autoplay: true,
+    autoplay: { delay: 6000 },
     loop: true,
     loopedSlides: 4,
     speed: 200,

@@ -18,11 +18,11 @@ const CaseContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 
-  > :nth-child(2) {
+  > *:nth-of-type(2) {
     margin-top: 60px;
   }
 
-  > :nth-child(3) {
+  > *:nth-of-type(3) {
     margin-top: -60px;
   }
 `;

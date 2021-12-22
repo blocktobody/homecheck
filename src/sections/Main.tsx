@@ -100,11 +100,11 @@ const ScrollIndicator = styled.div`
   width: fit-content;
   margin: auto auto 120px;
 
-  > :nth-child(1) {
+  > *:nth-of-type(1) {
     animation: ani-affordance 2.5s 80ms infinite;
   }
 
-  > :nth-child(2) {
+  > *:nth-of-type(2) {
     animation: ani-affordance 2.5s infinite;
     margin-top: -10px;
   }

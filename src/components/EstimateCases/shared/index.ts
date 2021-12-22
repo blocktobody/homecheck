@@ -37,7 +37,7 @@ export const TotalPrice = styled.div`
   width: 100%;
   margin-bottom: 16px;
 
-  > :first-child {
-    margin-top: 1px;
+  > *:first-of-type {
+    margin-top: 2px;
   }
 `;
