@@ -68,7 +68,7 @@ function CaseCard({ card }: Props) {
   function handleSetTimeout(value: boolean) {
     timer.current = setTimeout(() => {
       setShowPhoto(!value);
-    }, 3000);
+    }, 4000);
   }
 
   function handleClearTimeout() {
