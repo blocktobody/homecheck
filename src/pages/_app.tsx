@@ -28,9 +28,8 @@ interface Props {
 }
 
 function MyApp({ Component, pageProps }: AppProps<Props>) {
-  const { contentType: contentTypeProp } = pageProps;
-  const contentType = contentTypeProp ?? window.location.pathname.slice(1);
-  const { title = '', linkUrl = '' } = metaInfos[contentType as ContentType];
+  const { contentType = CONTENT_TYPE.DONGHENG } = pageProps;
+  const { title, linkUrl } = metaInfos[contentType as ContentType];
   const { description, keyword, ogImageUrl } = defaultMetaInfos;
 
   return (
