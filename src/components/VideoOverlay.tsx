@@ -28,7 +28,7 @@ function VideoOverlay() {
   return (
     <Container>
       <Overlay />
-      <Video src="/video.mp4" autoPlay loop muted />
+      <Video src="/video.mp4" autoPlay loop muted playsInline />
     </Container>
   );
 }
