@@ -7,8 +7,8 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next build && next export",
-    "export-dongheng": "./dongheng.sh && export -o dongheng && rm .env.local~",
-    "export-interior": "./interior.sh && export -o interior && rm .env.local~"
+    "export-dongheng": "./dongheng.sh && yarn export -o dongheng && rm .env.local~",
+    "export-interior": "./interior.sh && yarn export -o interior && rm .env.local~"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
