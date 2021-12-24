@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
 import type { NextPage } from 'next';
-import useSWR from 'swr';
+import { useEffect, useState } from 'react';
 
 import VideoOverlay from '../components/VideoOverlay';
 import Main from '../sections/Main';
@@ -11,16 +11,7 @@ import FixedButtons from '../components/FixedButtons';
 
 import { MainContext } from '../context';
 import { BREAK_POINT } from '../styles/global';
-
-async function fetcher(url: never) {
-  const res = await fetch(url);
-  const data = await res.json();
-
-  if (res.status !== 200) {
-    throw new Error(data.message);
-  }
-  return data;
-}
+import { Data } from '../types';
 
 // 운영 빌드용 (yarn export-dongheng, yarn export-interior)
 // export async function getStaticProps() {
@@ -36,16 +27,21 @@ interface Props {
 }
 
 const Home: NextPage<Props> = function Home({ contentType }: Props) {
-  const { data, error } = useSWR(
-    `/api/data?contentType=${contentType}`,
-    fetcher,
-  );
+  const [data, setData] = useState<Data | null>(null);
 
-  if (error || !data) {
+  useEffect(() => {
+    (async () => {
+      const data = await import(`../data/${contentType}.json`);
+
+      setData(data);
+    })();
+  }, [contentType]);
+
+  if (!data) {
     return null;
   }
 
-  const isMobile = window.innerWidth <= BREAK_POINT;
+  const isMobile = (window?.innerWidth ?? 0) <= BREAK_POINT;
 
   return (
     <MainContext.Provider value={{ data, isMobile }}>

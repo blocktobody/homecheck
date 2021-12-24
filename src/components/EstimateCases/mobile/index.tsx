@@ -39,7 +39,7 @@ function EstimateCasesMobile() {
     centeredSlides: true,
     slidesPerView: 'auto',
     spaceBetween: 16,
-    autoplay: { delay: 10000 },
+    autoplay: { delay: 5000 },
     loop: true,
     loopedSlides: 4,
     speed: 200,
@@ -50,7 +50,7 @@ function EstimateCasesMobile() {
       <Swiper {...swiperOptions}>
         {cases.map((card) => (
           <SwiperSlide key={card.title}>
-            <CaseCard card={card} />
+            {({ isActive }) => <CaseCard card={card} isActive={isActive} />}
           </SwiperSlide>
         ))}
       </Swiper>

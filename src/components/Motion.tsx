@@ -1,4 +1,3 @@
-/* eslint-disable react/require-default-props */
 import { PropsWithChildren } from 'react';
 import { motion } from 'framer-motion';
 

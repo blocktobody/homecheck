@@ -48,6 +48,7 @@ const Bullet = styled.li`
   }
 
   > p {
+    width: 92px;
     flex-shrink: 0;
     margin-right: 4px;
   }

@@ -28,8 +28,7 @@
           "title": "홈체크 예상 견적",
           "items": ["자재비", "인건비", "운송비"],
           "totalPrice": "400,000원"
-        },
-        "imagePath": "/case-interior-1.jpg"
+        }
       },
       {
         "subtitle": "예상 견적 02",
@@ -38,8 +37,7 @@
           "title": "홈체크 예상 견적",
           "items": ["내부 단열 공사", "부자재비", "인건비"],
           "totalPrice": "1,000,000원"
-        },
-        "imagePath": "/case-interior-2.jpg"
+        }
       },
       {
         "subtitle": "예상 견적 03",
@@ -48,8 +46,7 @@
           "title": "홈체크 예상 견적",
           "items": ["도배 공사", "단열 공사", "인건비"],
           "totalPrice": "1,200,000원"
-        },
-        "imagePath": "/case-interior-3.jpg"
+        }
       },
       {
         "subtitle": "예상 견적 04",
@@ -58,8 +55,7 @@
           "title": "홈체크 예상 견적",
           "items": ["자재비", "인건비"],
           "totalPrice": "575,000원"
-        },
-        "imagePath": "/case-interior-4.jpg"
+        }
       }
     ],
     "totalEstimate": {
@@ -121,7 +117,7 @@
     "title": "유의사항",
     "bullets": [
       {
-        "title": "체험단 모집 진행 기간",
+        "title": "모집 기간",
         "contents": ["12월 27일(월) ~ 1월 23일(일)"]
       },
       {

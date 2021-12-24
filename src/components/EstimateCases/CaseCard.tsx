@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 
 import { Container, Line, ReceiptTitle, Title, TotalPrice } from './shared';
 
 import Text from '../Text';
-import Image from '../Image';
 
 import { CaseCardData } from '../../types';
 
@@ -14,20 +12,7 @@ const Content = styled.div`
   height: 240px;
 `;
 
-const ImageContainer = styled.div<{ show: boolean }>`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 98%;
-  height: 98%;
-  top: 0;
-  left: 0;
-  opacity: ${({ show }) => (show ? '1' : '0')};
-  transition: opacity ease-in-out 250ms;
-`;
-
-const Receipt = styled.div<{ imagePath: string; show: boolean }>`
+const Receipt = styled.div<{ imagePath: string }>`
   width: calc(100% + 14px);
   height: calc(100% + 16px);
   background-image: url(${({ imagePath }) => imagePath});
@@ -36,8 +21,6 @@ const Receipt = styled.div<{ imagePath: string; show: boolean }>`
   text-align: center;
   padding: 35px 22px 40px 25px;
   margin: -6px -5px -10px -9px;
-  opacity: ${({ show }) => (show ? '1' : '0')};
-  transition: opacity ease-in-out 250ms;
 
   > p {
     color: #8f8f8f;
@@ -51,39 +34,18 @@ const Receipt = styled.div<{ imagePath: string; show: boolean }>`
 
 interface Props {
   card: CaseCardData;
+  isActive?: boolean;
 }
 
-function CaseCard({ card }: Props) {
+function CaseCard({ card, isActive = true }: Props) {
   const {
     subtitle,
     title,
     receipt: { title: receiptTitle, items, totalPrice },
-    imagePath,
   } = card;
 
-  const [showPhoto, setShowPhoto] = useState<boolean>(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const timer = useRef<any>(null);
-
-  function handleSetTimeout(value: boolean) {
-    timer.current = setTimeout(() => {
-      setShowPhoto(!value);
-    }, 4000);
-  }
-
-  function handleClearTimeout() {
-    clearTimeout(timer.current);
-    timer.current = null;
-  }
-
-  useEffect(() => {
-    handleSetTimeout(showPhoto);
-
-    return () => handleClearTimeout();
-  }, [showPhoto]);
-
   return (
-    <Container>
+    <Container isActive={isActive}>
       <Title>
         <Text color="primary" weight={600}>
           {subtitle}
@@ -93,10 +55,7 @@ function CaseCard({ card }: Props) {
         </Text>
       </Title>
       <Content>
-        <ImageContainer show={showPhoto}>
-          <Image src={imagePath} alt={receiptTitle} loading="lazy" />
-        </ImageContainer>
-        <Receipt imagePath="/receipt-container.png" show={!showPhoto}>
+        <Receipt imagePath="/receipt-container.png">
           <ReceiptTitle>
             <Text color="black" weight={600}>
               {receiptTitle}

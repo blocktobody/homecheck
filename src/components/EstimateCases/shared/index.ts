@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
+export const Container = styled.div<{ isActive?: boolean }>`
   width: fit-content;
   background-color: #eaeaea;
   padding: 50px 30px 45px;
   border-radius: 8px;
+  opacity: ${({ isActive = true }) => (isActive ? '1' : '0.5')};
+  transition: opacity ease-in-out 200ms;
 `;
 
 export const Title = styled.div<{ align?: 'left' | 'center' }>`
